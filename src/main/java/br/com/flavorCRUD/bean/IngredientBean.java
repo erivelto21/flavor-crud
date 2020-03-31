@@ -10,6 +10,7 @@ import javax.inject.Named;
 
 import br.com.flavorCRUD.domain.Ingredient;
 import br.com.flavorCRUD.service.IngredientService;
+import br.com.flavorCRUD.util.FacesMessageUtil;
 
 @Named
 @ViewScoped
@@ -51,8 +52,10 @@ public class IngredientBean implements Serializable{
 	public void save() {
 		if(this.ingredient.getId() != 0) {
 			this.update();
+			new FacesMessageUtil().successMessage("Ingrediente atualizado com sucesso");
 		}else {
 			this.create();
+			new FacesMessageUtil().successMessage("Ingrediente cadastrado com sucesso");
 		}
 		
 		this.clear();
