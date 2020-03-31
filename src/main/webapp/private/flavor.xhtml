@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="../templates/main_template.xhtml">
+	<ui:define name="css">
+		<h:outputStylesheet name="css/flavor-ingredient-pages.css"/>
+	</ui:define>
+
+	<ui:define name="content">
+		<div id="container" class="row">
+			<p:importEnum type="br.com.flavorCRUD.domain.Type" />
+			
+			<h:outputText id="title" styleClass="h2-css col-12" value="#{flavorBean.flavor.id != 0 ? 'Atualizar Sabor' : 'Cadastro de Sabores'}"/>
+			<div id="h2-line"></div>
+			<h:form id="form" styleClass="row col-lg-10 col-md-10 col-sm-10 col-10">
+				<div class="col-6 form-group">
+					<h:outputLabel for="flavorName" value="Nome:" />
+					<p:inputText id="flavorName" value="#{flavorBean.flavor.name}" styleClass="text-input" required="true" placeholder="Exemplo: Mussarela"/>
+				</div>
+		
+				<div class="col-6 form-group">
+					<h:outputLabel for="flavorImage" value="Url da imagem:" />
+					<p:inputText id="flavorImage" value="#{flavorBean.flavor.image}" styleClass="text-input" required="true" placeholder="Exemplo: /assets/img/Mussarela.jpg"/>
+				</div>
+				
+				<div id="flavor-type-select" class="col-6 form-group">
+					<h:outputLabel for="flavorType" value="Selecione o tipo:" />
+					<h:selectOneMenu id="flavorType" value="#{flavorBean.flavor.type}" required="true">
+						<f:selectItem itemLabel="" itemValue=""/>
+						<f:selectItem itemLabel="#{Type.SALGADA.value}"
+							itemValue="#{Type.SALGADA}" />
+						<f:selectItem itemLabel="#{Type.DOCE.value}"
+							itemValue="#{Type.DOCE}" />
+						<f:selectItem itemLabel="#{Type.VEGETARIANA.value}"
+							itemValue="#{Type.VEGETARIANA}" />
+					</h:selectOneMenu>
+				</div>
+				
+				<div class="col-6 form-group">
+					<h:outputLabel for="flavorPrice" value="Preço:" />
+					<p:inputNumber id="flavorPrice" thousandSeparator="." decimalSeparator="," 
+						value="#{flavorBean.flavor.price}" required="true"
+						 placeholder="Exemplo: R$ 15,10"/>
+				</div>
+				
+				<div class="col-12 form-group">
+					<h:outputLabel for="flavorIngredients" value="Selecione os ingredientes:" />
+					<p:selectManyMenu id="flavorIngredients" collectionType="java.util.ArrayList"
+						value="#{flavorBean.flavor.ingredients}" var="i"
+						showCheckbox="true" filter="true" filterMatchMode="contains"
+						converter="IngredientConverter" required="true">
+						<f:selectItems value="#{flavorBean.ingredients}" itemValue="#{ingredient}" 
+						itemLabel="#{ingredient.name}" var="ingredient"/>
+						<p:column>
+							#{i.name}
+						</p:column>
+					</p:selectManyMenu>
+				</div>
+				
+				<div class="col-12 form-group">
+					<p:commandButton styleClass="btn" value="Salvar" action="#{flavorBean.save}" update="@form list title" />
+					<p:commandButton styleClass="btn" value="Limpar" action="#{flavorBean.clear}" update="@form title" />
+				</div>
+			</h:form>
+			
+			<h2 class="col-lg-12 col-md-12 col-sm-12 col-12">Lista de Sabores</h2>
+			
+			<p:dataTable id="list" styleClass="col-lg-12 col-md-12 col-sm-12 col-12"
+				var="flavor"  value="#{flavorBean.flavors}"
+				paginatorPosition="bottom" paginatorAlwaysVisible="true"
+				paginator="true" rows="20" rowStyleClass="null"
+				>
+				<p:column headerText="Nome">
+					<h:outputText value="#{flavor.name}" />
+				</p:column>
+				<p:column styleClass="url-image-col" headerText="Url da imagem">
+					<h:outputText value="#{flavor.image}" />
+				</p:column>
+				<p:column headerText="Tipo">
+					<h:outputText value="#{flavor.type.value}" />
+				</p:column>
+				<p:column headerText="Preço">
+					<p:outputLabel value="R$ #{flavor.price}">
+						<f:convertNumber type="currency" maxFractionDigits="2"
+							groupingUsed="true" minFractionDigits="2" />
+					</p:outputLabel>
+				</p:column>
+				<p:column headerText="Ação">
+					<h:form>
+						<h:commandLink value="atualizar">
+							<f:setPropertyActionListener value="#{flavor}" target="#{flavorBean.flavor}"/>
+							<f:ajax render="form title"/>
+						</h:commandLink>
+								&#160;
+						<h:commandLink value="remover" action="#{flavorBean.delete(flavor)}">
+							<f:ajax render="list" />
+						</h:commandLink>
+					</h:form>
+				</p:column>
+			</p:dataTable>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
