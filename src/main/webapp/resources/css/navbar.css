@@ -1,0 +1,29 @@
+#navbar{
+	font-size: 20px;
+	text-align: center;
+	padding-top: 20px;
+	height: 80px;
+	background-color: #3767b3;
+}
+
+.navbar-link {
+	color: white;
+	font-family: 'Baloo Da 2', cursive;
+	text-decoration: none;
+}
+
+#navbar > a {
+	  transition: font-size 1.5s;
+}
+
+#navbar > a:hover {
+	font-size: 30px;
+}
+
+#navbar > a:first-child {
+	margin-right: 15px
+}
+
+#navbar > a:last-child {
+	margin-left: 15px
+}
