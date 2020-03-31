@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="../templates/main_template.xhtml">
+	<ui:define name="css">
+		<h:outputStylesheet name="css/flavor-ingredient-pages.css"/>
+	</ui:define>
+	<ui:define name="content">
+		<div id="container" class="row">
+			<h:outputText id="title" styleClass="h2-css col-12" value="#{ingredientBean.ingredient.id != 0 ? 'Atualizar Ingrediente' : 'Cadastro de Ingredientes'}"/>
+			<div id="h2-line"></div>
+				
+			<h:form id="form" styleClass="row col-lg-10 col-md-10 col-sm-10 col-10">
+				<div class="col-6 form-group">
+					<h:outputLabel for="ingredientName" value="Nome"/>
+					<p:inputText id="ingredientName" value="#{ingredientBean.ingredient.name}" required="true"/>
+				</div>
+				
+				<div class="col-6 form-group">
+					<h:outputLabel for="ingredientAmount" value="Quantidade"/>
+					<div>
+						<p:spinner id="ingredientAmount" value="#{ingredientBean.ingredient.amount}" min="1" max="100" required="true"/>
+					</div>
+				</div>
+				
+				<div class="col-12 form-group">
+					<p:commandButton styleClass="btn" value="Salvar" action="#{ingredientBean.save}" update="@form list title"/>
+					<p:commandButton styleClass="btn" value="Limpar" action="#{ingredientBean.clear}" update="@form title"/>
+				</div>
+			</h:form>
+		
+			<h2 class="col-lg-12 col-md-12 col-sm-12 col-12">Lista de Ingredientes</h2>
+		
+			<p:dataTable id="list" var="ingredient" value="#{ingredientBean.ingredients}"
+				paginatorPosition="bottom" paginatorAlwaysVisible="true"
+				paginator="true" rows="20"
+				styleClass="col-lg-12 col-md-12 col-sm-12 col-12">
+	
+				<p:column headerText="Nome">
+					<h:outputText value="#{ingredient.name}"></h:outputText>
+				</p:column>
+				<p:column headerText="Quantidade">
+					<h:outputText value="#{ingredient.amount}"></h:outputText>
+				</p:column>
+				<p:column headerText="Ação">
+					<h:form>
+						<h:commandLink value="atualizar">
+							<f:setPropertyActionListener value="#{ingredient}" target="#{ingredientBean.ingredient}"/>
+							<f:ajax render="form title"/>
+						</h:commandLink>
+								&#160;
+						<h:commandLink value="remover" action="#{ingredientBean.delete(ingredient)}">
+							<f:ajax render="list" />
+						</h:commandLink>
+					</h:form>
+				</p:column>
+			</p:dataTable>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

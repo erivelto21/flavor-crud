@@ -1,0 +1,141 @@
+*{
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.row {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.h2-css {
+	font-size: 32px;
+}
+
+#h2-line {
+	width: 80%;
+	border-bottom: 1px solid black;
+	margin-bottom: 30px;
+}
+
+#container {
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 120px;
+}
+
+#container > .h2-css, #container > h2 {
+	text-align: center;
+	font-family: 'Abel', sans-serif;
+}
+
+.ui-inputfield {
+	box-shadow: inset 0 1px 2px #c4c4c4;
+}
+
+#form {
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+}
+
+#form > div > label {
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #3767b3;
+}
+
+#form > div > button:first-child {
+	margin-right: 20px;
+}
+
+#form > .col-6 > label ,  #flavorForm > .col-12 > label{
+	width: 100%;
+	color: #3767b3;
+}
+
+#form > .col-6 > input {
+	margin-bottom: 40px;
+}
+
+#form > .col-6 > span > input {
+	width: 60%;
+}
+
+#flavor-type-select > select {
+	width: 45%;
+	height: 35px;
+	border-radius: 4px;
+	background-color: white;
+}
+
+.text-input {
+	width: 90%;
+}
+
+#form > .col-12 > div {
+	width: 50%;
+}
+
+#form > .col-12 > div > div:first-child > input {
+	width: 100%
+}
+
+.ui-selectlistbox-item:hover {
+	background: #3767b3;
+	color: white;
+}
+
+.btn {
+	background: #3767b3;
+	background-color: #3767b3;
+	color: white;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+.btn:hover {
+	background: #3767b3;
+	background-color: #3767b3;
+	color: black;
+}
+
+#list {
+	text-align: center;
+}
+
+#list > div > table > thead > tr > th, .ui-paginator-bottom {
+	background: #3767b3;
+	background-color: #3767b3;
+	color: white;
+	box-shadow: none;
+}
+
+.url-image-col {
+	width: 40%;
+}
+
+.ui-widget-content a{
+	color: #3767b3;
+}
+
+.ui-datatable-odd {
+	background: none;
+}
+
+.ui-corner-all {
+	line-height: 1.2;
+}
+
+.ui-paginator-page, .ui-paginator-page:hover,
+.ui-paginator-next, .ui-paginator-next:hover,
+.ui-paginator-last, .ui-paginator-last:hover,
+.ui-paginator-prev, .ui-paginator-prev:hover,
+.ui-paginator-first, .ui-paginator-first:hover{
+	background-color: white !important;
+	color: #3767b3 !important;
+}
+
+.ui-state-active, .ui-state-highlight {
+	box-shadow: none;
+	background: #d4d4d4 !important;
+}
