@@ -18,13 +18,15 @@
 			<h:form id="form" styleClass="row col-lg-10 col-md-10 col-sm-10 col-10">
 				<div class="col-6 form-group">
 					<h:outputLabel for="ingredientName" value="Nome"/>
-					<p:inputText id="ingredientName" value="#{ingredientBean.ingredient.name}" required="true"/>
+					<p:inputText id="ingredientName" label="ingredientName" value="#{ingredientBean.ingredient.name}" required="true"/>
+					<h:message for="ingredientName" styleClass="error-message"/>
 				</div>
 				
 				<div class="col-6 form-group">
 					<h:outputLabel for="ingredientAmount" value="Quantidade"/>
 					<div>
-						<p:spinner id="ingredientAmount" value="#{ingredientBean.ingredient.amount}" min="1" max="100" required="true"/>
+						<p:spinner id="ingredientAmount" label="ingredientAmount" value="#{ingredientBean.ingredient.amount}" min="1" max="100" required="true"/>
+						<h:message for="ingredientAmount" styleClass="error-message"/>
 					</div>
 				</div>
 				
