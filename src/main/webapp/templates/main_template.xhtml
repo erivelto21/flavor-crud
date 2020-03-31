@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>flavorCRUD</title>
@@ -17,6 +18,9 @@
 		<h:graphicImage library="images" name="pizzaIcon.png" height="50"/>
 		<h:link value="INGREDIENTES" outcome="ingredient" styleClass="navbar-link"/>
 	</div>
+	<p:outputPanel id="messages" autoUpdate="true">
+		<h:messages errorClass="error-message" infoClass="info-message"/>
+	</p:outputPanel>
 	<ui:insert name="content" />
 </h:body>
 </html>
