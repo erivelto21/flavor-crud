@@ -27,3 +27,18 @@
 #navbar > a:last-child {
 	margin-left: 15px
 }
+
+#messages {
+	margin-top: 120px;
+	text-align: center;
+}
+
+.info-message {
+	color: #3767b3;
+	list-style-type: none;
+}
+
+.error-message {
+	color: red;
+	list-style-type: none;
+}
