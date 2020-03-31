@@ -32,7 +32,9 @@
 				
 				<div class="col-12 form-group">
 					<p:commandButton styleClass="btn" value="Salvar" action="#{ingredientBean.save}" update="@form list title"/>
-					<p:commandButton styleClass="btn" value="Limpar" action="#{ingredientBean.clear}" update="@form title"/>
+					<h:commandLink styleClass="btn" value="Limpar" action="#{ingredientBean.clear}">
+						<f:ajax render="@form title"/>
+					</h:commandLink>
 				</div>
 			</h:form>
 		

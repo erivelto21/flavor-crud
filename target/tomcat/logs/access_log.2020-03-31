@@ -334,3 +334,12 @@
 0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:43:44 -0300] "POST /private/flavor.xhtml HTTP/1.1" 200 35300 http-bio-8080-exec-4 27
 0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:43:44 -0300] "GET /javax.faces.resource/images/ui-icons_cd0a0a_256x240.png.xhtml?ln=primefaces-aristo HTTP/1.1" 200 3699 http-bio-8080-exec-4 2
 0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:43:48 -0300] "GET /private/flavor.xhtml HTTP/1.1" 200 40012 http-bio-8080-exec-4 61
+127.0.0.1 - - [31/Mar/2020:18:45:17 -0300] "GET /private/flavor.xhtml HTTP/1.1" 200 40012 http-bio-8080-exec-1 3349
+127.0.0.1 - - [31/Mar/2020:18:46:08 -0300] "GET /private/flavor.xhtml HTTP/1.1" 200 40012 http-bio-8080-exec-3 108
+127.0.0.1 - - [31/Mar/2020:18:46:10 -0300] "GET /private/ingredient.xhtml HTTP/1.1" 200 22662 http-bio-8080-exec-4 55
+127.0.0.1 - - [31/Mar/2020:18:46:12 -0300] "POST /private/ingredient.xhtml HTTP/1.1" 200 17957 http-bio-8080-exec-5 46
+127.0.0.1 - - [31/Mar/2020:18:46:15 -0300] "POST /private/ingredient.xhtml HTTP/1.1" 200 17957 http-bio-8080-exec-6 21
+127.0.0.1 - - [31/Mar/2020:18:46:18 -0300] "GET /javax.faces.resource/css/bootstrap/bootstrap.min.css.map HTTP/1.1" 404 1063 http-bio-8080-exec-7 3
+127.0.0.1 - - [31/Mar/2020:18:46:23 -0300] "POST /private/ingredient.xhtml HTTP/1.1" 200 17957 http-bio-8080-exec-8 17
+127.0.0.1 - - [31/Mar/2020:18:47:08 -0300] "GET /private/ingredient.xhtml HTTP/1.1" 200 22683 http-bio-8080-exec-9 25
+127.0.0.1 - - [31/Mar/2020:18:47:09 -0300] "POST /private/ingredient.xhtml HTTP/1.1" 200 3089 http-bio-8080-exec-10 13
