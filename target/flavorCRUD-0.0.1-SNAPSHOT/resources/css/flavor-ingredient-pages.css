@@ -44,6 +44,12 @@
 	color: #3767b3;
 }
 
+#form > .form-group > .error-message {
+	margin-top: 10px;
+	display: block;
+	color: red;
+}
+
 #form > div > button:first-child {
 	margin-right: 20px;
 }
@@ -53,7 +59,7 @@
 	color: #3767b3;
 }
 
-#form > .col-6 > input {
+#form > .col-6 {
 	margin-bottom: 40px;
 }
 

@@ -19,18 +19,21 @@
 			<h:form id="form" styleClass="row col-lg-10 col-md-10 col-sm-10 col-10">
 				<div class="col-6 form-group">
 					<h:outputLabel for="flavorName" value="Nome:" />
-					<p:inputText id="flavorName" value="#{flavorBean.flavor.name}" styleClass="text-input" required="true" placeholder="Exemplo: Mussarela"/>
+					<p:inputText id="flavorName" label="flavorName" value="#{flavorBean.flavor.name}" styleClass="text-input" required="true" placeholder="Exemplo: Mussarela"/>
+					<h:message for="flavorName" styleClass="error-message"/>
 				</div>
 		
 				<div class="col-6 form-group">
 					<h:outputLabel for="flavorImage" value="Url da imagem:" />
-					<p:inputText id="flavorImage" value="#{flavorBean.flavor.image}" styleClass="text-input" required="true" placeholder="Exemplo: /assets/img/Mussarela.jpg"/>
+					<p:inputText id="flavorImage" label="flavorImage" value="#{flavorBean.flavor.image}" styleClass="text-input" required="true" placeholder="Exemplo: /assets/img/Mussarela.jpg"/>
+					<h:message for="flavorImage" styleClass="error-message"/>
 				</div>
 				
 				<div id="flavor-type-select" class="col-6 form-group">
 					<h:outputLabel for="flavorType" value="Selecione o tipo:" />
-					<h:selectOneMenu id="flavorType" value="#{flavorBean.flavor.type}" required="true">
-						<f:selectItem itemLabel="" itemValue=""/>
+					<h:selectOneMenu id="flavorType" label="flavorType" 
+									value="#{flavorBean.flavor.type}" required="true"
+									>
 						<f:selectItem itemLabel="#{Type.SALGADA.value}"
 							itemValue="#{Type.SALGADA}" />
 						<f:selectItem itemLabel="#{Type.DOCE.value}"
@@ -38,18 +41,20 @@
 						<f:selectItem itemLabel="#{Type.VEGETARIANA.value}"
 							itemValue="#{Type.VEGETARIANA}" />
 					</h:selectOneMenu>
+					<h:message for="flavorType" styleClass="error-message"/>
 				</div>
 				
 				<div class="col-6 form-group">
 					<h:outputLabel for="flavorPrice" value="Preço:" />
-					<p:inputNumber id="flavorPrice" thousandSeparator="." decimalSeparator="," 
+					<p:inputNumber id="flavorPrice" label="flavorPrice" thousandSeparator="." decimalSeparator="," 
 						value="#{flavorBean.flavor.price}" required="true"
 						 placeholder="Exemplo: R$ 15,10"/>
+					<h:message for="flavorPrice" styleClass="error-message"/>
 				</div>
 				
 				<div class="col-12 form-group">
 					<h:outputLabel for="flavorIngredients" value="Selecione os ingredientes:" />
-					<p:selectManyMenu id="flavorIngredients" collectionType="java.util.ArrayList"
+					<p:selectManyMenu id="flavorIngredients" label="flavorIngredients" collectionType="java.util.ArrayList"
 						value="#{flavorBean.flavor.ingredients}" var="i"
 						showCheckbox="true" filter="true" filterMatchMode="contains"
 						converter="IngredientConverter" required="true">
@@ -59,6 +64,7 @@
 							#{i.name}
 						</p:column>
 					</p:selectManyMenu>
+					<h:message for="flavorIngredients" styleClass="error-message"/>
 				</div>
 				
 				<div class="col-12 form-group">
