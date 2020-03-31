@@ -69,7 +69,9 @@
 				
 				<div class="col-12 form-group">
 					<p:commandButton styleClass="btn" value="Salvar" action="#{flavorBean.save}" update="@form list title" />
-					<p:commandButton styleClass="btn" value="Limpar" action="#{flavorBean.clear}" update="@form title" />
+					<h:commandLink styleClass="btn" value="Limpar" action="#{flavorBean.clear}">
+						<f:ajax render="@form title"/>
+					</h:commandLink>
 				</div>
 			</h:form>
 			

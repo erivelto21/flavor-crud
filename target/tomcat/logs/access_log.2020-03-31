@@ -285,3 +285,15 @@
 0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:37:12 -0300] "POST /private/ingredient.xhtml HTTP/1.1" 200 17921 http-bio-8080-exec-5 25
 0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:37:15 -0300] "GET /private/flavor.xhtml HTTP/1.1" 200 39991 http-bio-8080-exec-6 81
 0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:37:18 -0300] "GET /private/flavor.xhtml HTTP/1.1" 200 39991 http-bio-8080-exec-7 84
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:31 -0300] "GET /javax.faces.resource/css/flavor-ingredient-pages.css.xhtml HTTP/1.1" 200 2353 http-bio-8080-exec-2 13
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:32 -0300] "GET /private/flavor.xhtml HTTP/1.1" 200 40314 http-bio-8080-exec-1 3492
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:34 -0300] "GET /private/flavor.xhtml HTTP/1.1" 200 40314 http-bio-8080-exec-4 96
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:36 -0300] "POST /private/flavor.xhtml HTTP/1.1" 200 35601 http-bio-8080-exec-5 84
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:41 -0300] "GET /private/ingredient.xhtml HTTP/1.1" 200 22662 http-bio-8080-exec-6 46
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:41 -0300] "POST /private/ingredient.xhtml HTTP/1.1" 200 17896 http-bio-8080-exec-7 19
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:43 -0300] "GET /private/flavor.xhtml HTTP/1.1" 200 40293 http-bio-8080-exec-8 70
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:46 -0300] "POST /private/flavor.xhtml HTTP/1.1" 200 16672 http-bio-8080-exec-9 30
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:47 -0300] "POST /private/flavor.xhtml HTTP/1.1" 200 16379 http-bio-8080-exec-10 138
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:51 -0300] "POST /private/flavor.xhtml HTTP/1.1" 200 16804 http-bio-8080-exec-2 24
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:55 -0300] "GET /private/flavor.xhtml HTTP/1.1" 200 40314 http-bio-8080-exec-2 73
+0:0:0:0:0:0:0:1 - - [31/Mar/2020:18:38:57 -0300] "POST /private/flavor.xhtml HTTP/1.1" 200 16805 http-bio-8080-exec-2 21
