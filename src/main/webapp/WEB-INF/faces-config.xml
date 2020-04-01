@@ -10,6 +10,11 @@
         </locale-config>
         <message-bundle>messages</message-bundle>
     </application>
+    <lifecycle>
+    	<phase-listener>
+    		br.com.flavorCRUD.listener.AuthorizationListener
+    	</phase-listener>
+    </lifecycle>
 <!--     <lifecycle> -->
 <!--     	<phase-listener> -->
 <!--     		br.com.flavorCRUD.listener.LifeCycleListener -->
