@@ -96,6 +96,12 @@
 	color: white;
 	box-shadow: none;
 	text-shadow: none;
+	height: 38px;
+	width: 85px;
+}
+
+.btn:first-of-type {
+	margin-right: 20px;
 }
 
 .btn:hover {
