@@ -12,6 +12,7 @@ import br.com.flavorCRUD.domain.Flavor;
 import br.com.flavorCRUD.domain.Ingredient;
 import br.com.flavorCRUD.service.FlavorService;
 import br.com.flavorCRUD.service.IngredientService;
+import br.com.flavorCRUD.util.FacesMessageUtil;
 
 @Named
 @ViewScoped
@@ -62,13 +63,16 @@ public class FlavorBean implements Serializable {
 	public void delete(Flavor flavor) {
 		this.flavorService.delete(flavor);
 		this.reloadFlavorList();
+		new FacesMessageUtil().successMessage("Sabor removido com sucesso");
 	}
 	
 	public void save() {
 		if(this.flavor.getId() != 0) {
 			this.update();
+			new FacesMessageUtil().successMessage("Sabor atualizado com sucesso");
 		}else {
 			this.create();
+			new FacesMessageUtil().successMessage("Sabor cadastrado com sucesso");
 		}
 		
 		this.clear();
