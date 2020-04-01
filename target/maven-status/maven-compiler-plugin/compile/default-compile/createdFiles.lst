@@ -11,6 +11,7 @@ br\com\flavorCRUD\converter\IngredientConverter.class
 br\com\flavorCRUD\domain\Ingredient.class
 br\com\flavorCRUD\interceptor\Transacional.class
 br\com\flavorCRUD\jpa\JpaUtil.class
+br\com\flavorCRUD\util\FacesMessageUtil.class
 br\com\flavorCRUD\listener\LifeCycleListener.class
 br\com\flavorCRUD\service\FlavorServiceImpl.class
 br\com\flavorCRUD\bean\FlavorBean.class
