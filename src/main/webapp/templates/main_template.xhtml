@@ -13,9 +13,13 @@
 	<ui:insert name="css"/>
 </h:head>
 <h:body>
-	<div id="navbar" class="fixed-top">
+	<div id="navbar" class="fixed-top row">
 		<h:link value="SABORES" outcome="flavor" styleClass="navbar-link"/>
-		<h:graphicImage library="images" name="pizzaIcon.png" height="50"/>
+		<h:form>
+			<h:commandLink action="#{loginBean.logout}">
+				<h:graphicImage library="images" name="pizzaIcon.png" height="50"/>
+			</h:commandLink>
+		</h:form>
 		<h:link value="INGREDIENTES" outcome="ingredient" styleClass="navbar-link"/>
 	</div>
 	

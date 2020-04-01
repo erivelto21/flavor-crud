@@ -10,19 +10,21 @@ html, body {
 #navbar{
 	font-size: 20px;
 	text-align: center;
-	padding-top: 20px;
 	height: 80px;
 	background-color: #3767b3;
+	justify-content: center;
+}
+
+#navbar > form {
+	padding-top: 10px;
 }
 
 .navbar-link {
+	padding-top: 20px;
 	color: white;
 	font-family: 'Baloo Da 2', cursive;
 	text-decoration: none;
-}
-
-#navbar > a {
-	  transition: font-size 1.5s;
+	transition: font-size 1.5s;
 }
 
 #navbar > a:hover {

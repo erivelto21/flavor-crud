@@ -13,14 +13,27 @@
 	<ui:insert name="css"/>
 </h:head>
 <h:body>
-	<div id="navbar" class="fixed-top">
+	<div id="navbar" class="fixed-top row">
 		<h:link value="SABORES" outcome="flavor" styleClass="navbar-link"/>
-		<h:graphicImage library="images" name="pizzaIcon.png" height="50"/>
+		<h:form>
+			<h:commandLink action="#{loginBean.logout}">
+				<h:graphicImage library="images" name="pizzaIcon.png" height="50"/>
+			</h:commandLink>
+		</h:form>
 		<h:link value="INGREDIENTES" outcome="ingredient" styleClass="navbar-link"/>
 	</div>
-	<p:outputPanel id="messages" autoUpdate="true">
-		<h:messages errorClass="error-message" infoClass="info-message"/>
-	</p:outputPanel>
-	<ui:insert name="content" />
+	
+	<div id="container">
+		<p:outputPanel id="messages" autoUpdate="true">
+			<h:messages errorClass="error-message" infoClass="info-message" globalOnly="true"/>
+		</p:outputPanel>
+		<ui:insert name="content" />
+	</div>
+	
+	<div id="footer">
+		<h:graphicImage library="images" name="pizzaIcon.png" height="50"/>
+		<h:outputLabel value="Flavor CRUD"/>
+		<h:graphicImage library="images" name="pizzaIcon.png" height="50"/>
+	</div>
 </h:body>
 </html>
