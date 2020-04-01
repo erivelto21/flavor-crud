@@ -18,9 +18,18 @@
 		<h:graphicImage library="images" name="pizzaIcon.png" height="50"/>
 		<h:link value="INGREDIENTES" outcome="ingredient" styleClass="navbar-link"/>
 	</div>
-	<p:outputPanel id="messages" autoUpdate="true">
-		<h:messages errorClass="error-message" infoClass="info-message"/>
-	</p:outputPanel>
-	<ui:insert name="content" />
+	
+	<div id="container">
+		<p:outputPanel id="messages" autoUpdate="true">
+			<h:messages errorClass="error-message" infoClass="info-message" globalOnly="true"/>
+		</p:outputPanel>
+		<ui:insert name="content" />
+	</div>
+	
+	<div id="footer">
+		<h:graphicImage library="images" name="pizzaIcon.png" height="50"/>
+		<h:outputLabel value="Flavor CRUD"/>
+		<h:graphicImage library="images" name="pizzaIcon.png" height="50"/>
+	</div>
 </h:body>
 </html>

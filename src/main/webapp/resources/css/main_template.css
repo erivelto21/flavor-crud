@@ -1,3 +1,12 @@
+* {
+	margin: 0;
+	padding: 0;	
+}
+
+html, body {
+	height: 100%;
+}
+
 #navbar{
 	font-size: 20px;
 	text-align: center;
@@ -28,17 +37,43 @@
 	margin-left: 15px
 }
 
+#container {
+	padding-top: 90px;
+	min-height: 100%;
+	padding-bottom: 80px;
+}
+
 #messages {
-	margin-top: 120px;
 	text-align: center;
+	width: 90%;
+    margin-left: 5%;
+    border-radius: 7px;
+}
+
+#messages > ul > li {
+	padding-top: 10px;
+	list-style-type: none;
+	border-radius: 7px;
+	height: 50px;
+	color: white;
 }
 
 .info-message {
-	color: #3767b3;
-	list-style-type: none;
+	background-color: #3767b3;
 }
 
-.error-message {
-	color: red;
-	list-style-type: none;
+#messages > ul > .error-message {
+	background-color: red;
+}
+
+#footer {
+	background-color: #3767b3;
+	clear: both;
+    position: relative;
+    height: 80px;
+    margin-top: -80px;
+	text-align: center;
+	padding-top: 15px;
+	color: white;
+	font-family: 'Baloo Da 2', cursive;
 }
