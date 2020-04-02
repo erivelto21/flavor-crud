@@ -24,6 +24,7 @@ E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\dao\IngredientDa
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\dao\UserDao.java
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\dao\UserDaoImpl.java
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\domain\User.java
+E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\lazyData\FlavorDataModel.java
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\service\AuthenticateService.java
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\bean\LoginBean.java
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\dao\FlavorDaoImpl.java

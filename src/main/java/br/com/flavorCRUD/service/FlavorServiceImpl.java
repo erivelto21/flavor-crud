@@ -20,6 +20,10 @@ public class FlavorServiceImpl implements FlavorService, Serializable{
 	public List<Flavor> getAll() {
 		return dao.getAll();
 	}
+	
+	public List<Flavor> pagination(int begin, int amount) {
+		return dao.pagination(begin, amount);
+	}
 
 	public void delete(Flavor flavor) {
 		dao.delete(flavor);
@@ -27,5 +31,9 @@ public class FlavorServiceImpl implements FlavorService, Serializable{
 
 	public void update(Flavor flavor) {
 		dao.update(flavor);
+	}
+
+	public int getTotalAmount() {
+		return (int) dao.count();
 	}
 }

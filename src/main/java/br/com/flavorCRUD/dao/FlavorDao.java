@@ -10,7 +10,11 @@ public interface FlavorDao {
 	
 	List<Flavor> getAll();
 	
+	List<Flavor> pagination(int begin, int amount);
+	
 	void delete(Flavor flavor);
 	
 	void update(Flavor flavor);
+	
+	long count();
 }

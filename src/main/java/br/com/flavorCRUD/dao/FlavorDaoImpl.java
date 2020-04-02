@@ -21,6 +21,14 @@ public class FlavorDaoImpl implements FlavorDao {
 	public List<Flavor> getAll() {
 		return this.entityManager.createQuery("select f from Flavor f ORDER BY ID", Flavor.class).getResultList();
 	}
+	
+	public List<Flavor> pagination(int begin, int amount) {
+		return this.entityManager
+				.createQuery("SELECT f FROM Flavor f ORDER BY ID", Flavor.class)
+				.setFirstResult(begin)
+				.setMaxResults(amount)
+				.getResultList();
+	}
 
 	@Transacional
 	public void delete(Flavor flavor) {
@@ -30,5 +38,9 @@ public class FlavorDaoImpl implements FlavorDao {
 	@Transacional
 	public void update(Flavor flavor) {
 		this.entityManager.merge(flavor);
+	}
+	
+	public long count() {
+		return (Long) this.entityManager.createQuery("select count(distinct f.id) from Flavor f").getSingleResult();
 	}
 }

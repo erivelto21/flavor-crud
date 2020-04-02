@@ -1,3 +1,4 @@
+br\com\flavorCRUD\lazyData\FlavorDataModel.class
 br\com\flavorCRUD\dao\UserDao.class
 br\com\flavorCRUD\domain\Role.class
 br\com\flavorCRUD\service\FlavorService.class

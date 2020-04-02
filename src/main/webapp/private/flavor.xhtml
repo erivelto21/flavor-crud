@@ -76,12 +76,12 @@
 			</h:form>
 			
 			<h2 class="col-lg-12 col-md-12 col-sm-12 col-12">Lista de Sabores</h2>
-			
-			<p:dataTable id="list" styleClass="col-lg-12 col-md-12 col-sm-12 col-12"
-				var="flavor"  value="#{flavorBean.flavors}"
-				paginatorPosition="bottom" paginatorAlwaysVisible="true"
-				paginator="true" rows="20" rowStyleClass="null"
-				>
+
+			<p:dataTable id="list"
+				styleClass="col-lg-12 col-md-12 col-sm-12 col-12" var="flavor"
+				value="#{flavorDataModel}" paginatorPosition="bottom"
+				paginatorAlwaysVisible="true" paginator="true"
+				rows="10" lazy="true">
 				<p:column headerText="Nome">
 					<h:outputText value="#{flavor.name}" />
 				</p:column>
@@ -99,14 +99,12 @@
 				</p:column>
 				<p:column headerText="Ação">
 					<h:form>
-						<h:commandLink value="atualizar">
-							<f:setPropertyActionListener value="#{flavor}" target="#{flavorBean.flavor}"/>
-							<f:ajax render="form title"/>
-						</h:commandLink>
+						<p:commandLink value="atualizar" update="form title">
+							<f:setPropertyActionListener value="#{flavor}"
+								target="#{flavorBean.flavor}" />
+						</p:commandLink>
 								&#160;
-						<h:commandLink value="remover" action="#{flavorBean.delete(flavor)}">
-							<f:ajax render="list" />
-						</h:commandLink>
+						<p:commandLink value="remover" action="#{flavorBean.delete(flavor)}" update="list"/>
 					</h:form>
 				</p:column>
 			</p:dataTable>

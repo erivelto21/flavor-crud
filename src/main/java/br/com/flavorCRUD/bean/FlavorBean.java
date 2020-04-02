@@ -4,9 +4,12 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+
+import org.primefaces.component.datatable.DataTable;
 
 import br.com.flavorCRUD.domain.Flavor;
 import br.com.flavorCRUD.domain.Ingredient;
@@ -19,8 +22,6 @@ import br.com.flavorCRUD.util.FacesMessageUtil;
 public class FlavorBean implements Serializable {
 
 	private Flavor flavor = new Flavor();
-
-	private List<Flavor> flavors;
 	
 	@Inject
 	private FlavorService flavorService;
@@ -32,7 +33,6 @@ public class FlavorBean implements Serializable {
 
 	@PostConstruct
 	public void initialize() {
-		this.flavors = this.flavorService.getAll();
 		this.ingredients = this.ingredientService.getAll();
 	}
 	
@@ -42,14 +42,6 @@ public class FlavorBean implements Serializable {
 
 	public void setFlavor(Flavor flavor) {
 		this.flavor = flavor;
-	}
-
-	public List<Flavor> getFlavors() {
-		return flavors;
-	}
-
-	public void setFlavors(List<Flavor> flavors) {
-		this.flavors = flavors;
 	}
 	
 	public List<Ingredient> getIngredients() {
@@ -62,8 +54,8 @@ public class FlavorBean implements Serializable {
 	
 	public void delete(Flavor flavor) {
 		this.flavorService.delete(flavor);
-		this.reloadFlavorList();
 		new FacesMessageUtil().successMessage("Sabor removido com sucesso");
+		this.dataTableLazyReload();
 	}
 	
 	public void save() {
@@ -76,6 +68,7 @@ public class FlavorBean implements Serializable {
 		}
 		
 		this.clear();
+		this.dataTableLazyReload();
 	}
 	
 	public void clear() {
@@ -84,14 +77,14 @@ public class FlavorBean implements Serializable {
 	
 	private void create() {
 		this.flavorService.create(flavor);
-		this.reloadFlavorList();
 	}
 	
 	private void update() {
 		this.flavorService.update(this.flavor);
 	}
 	
-	private void reloadFlavorList() {
-		this.setFlavors(this.flavorService.getAll());
+	private void dataTableLazyReload() {
+		DataTable dataTable = (DataTable)  FacesContext.getCurrentInstance().getViewRoot().findComponent("list");
+		dataTable.loadLazyData();
 	}
 }
