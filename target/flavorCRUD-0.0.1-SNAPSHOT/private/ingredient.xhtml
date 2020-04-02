@@ -40,9 +40,10 @@
 		
 			<h2 class="col-lg-12 col-md-12 col-sm-12 col-12">Lista de Ingredientes</h2>
 		
-			<p:dataTable id="list" var="ingredient" value="#{ingredientBean.ingredients}"
-				paginatorPosition="bottom" paginatorAlwaysVisible="true"
-				paginator="true" rows="20"
+			<p:dataTable id="list" var="ingredient"
+				value="#{ingredientDataModel}" paginatorPosition="bottom"
+				paginatorAlwaysVisible="true" paginator="true"
+				rows="10" lazy="true"
 				styleClass="col-lg-12 col-md-12 col-sm-12 col-12">
 	
 				<p:column headerText="Nome">
@@ -53,14 +54,11 @@
 				</p:column>
 				<p:column headerText="Ação">
 					<h:form>
-						<h:commandLink value="atualizar">
+						<p:commandLink value="atualizar" update="form title">
 							<f:setPropertyActionListener value="#{ingredient}" target="#{ingredientBean.ingredient}"/>
-							<f:ajax render="form title"/>
-						</h:commandLink>
+						</p:commandLink>
 								&#160;
-						<h:commandLink value="remover" action="#{ingredientBean.delete(ingredient)}">
-							<f:ajax render="list" />
-						</h:commandLink>
+						<p:commandLink value="remover" action="#{ingredientBean.delete(ingredient)}" update="list"/>
 					</h:form>
 				</p:column>
 			</p:dataTable>

@@ -10,7 +10,11 @@ public interface IngredientService {
 	
 	List<Ingredient> getAll();
 	
+	List<Ingredient> pagination(int begin, int amount);
+	
 	void delete(Ingredient ingredient);
 	
 	void update(Ingredient ingredient);
+	
+	int getTotalAmount();
 }

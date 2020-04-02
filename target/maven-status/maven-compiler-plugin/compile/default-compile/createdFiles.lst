@@ -19,6 +19,7 @@ br\com\flavorCRUD\bean\IngredientBean.class
 br\com\flavorCRUD\bean\LoginBean.class
 br\com\flavorCRUD\util\JsonUtil.class
 br\com\flavorCRUD\domain\User.class
+br\com\flavorCRUD\lazyData\IngredientDataModel.class
 br\com\flavorCRUD\interceptor\Transacional.class
 br\com\flavorCRUD\jpa\JpaUtil.class
 br\com\flavorCRUD\util\FacesMessageUtil.class

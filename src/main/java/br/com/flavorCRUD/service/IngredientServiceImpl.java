@@ -25,6 +25,10 @@ public class IngredientServiceImpl implements IngredientService, Serializable{
 	public List<Ingredient> getAll() {
 		return this.dao.getAll();
 	}
+	
+	public List<Ingredient> pagination(int begin, int amount) {
+		return dao.pagination(begin, amount);
+	}
 
 	public void delete(Ingredient ingredient) {
 		if(this.ingredientIsInAFalvor(ingredient)) {
@@ -48,5 +52,9 @@ public class IngredientServiceImpl implements IngredientService, Serializable{
 		}
 
 		return aux;
+	}
+	
+	public int getTotalAmount() {
+		return (int) dao.count();
 	}
 }

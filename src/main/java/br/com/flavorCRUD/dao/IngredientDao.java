@@ -9,8 +9,12 @@ public interface IngredientDao {
 	void create(Ingredient ingredient);
 
 	List<Ingredient> getAll();
+	
+	List<Ingredient> pagination(int begin, int amount);
 
 	void delete(Ingredient ingredient);
 
 	void update(Ingredient ingredient);
+	
+	long count();
 }

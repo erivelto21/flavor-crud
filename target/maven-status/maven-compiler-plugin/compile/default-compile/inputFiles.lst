@@ -2,6 +2,7 @@ E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\listener\Authori
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\listener\LifeCycleListener.java
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\service\IngredientService.java
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\converter\IngredientConverter.java
+E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\lazyData\IngredientDataModel.java
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\service\FlavorService.java
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\domain\Flavor.java
 E:\Projetos\Java Web\flavorCRUD\src\main\java\br\com\flavorCRUD\bean\SystemUser.java
