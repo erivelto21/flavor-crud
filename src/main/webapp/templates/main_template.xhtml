@@ -24,7 +24,8 @@
 	</div>
 	
 	<div id="container">
-		<p:outputPanel id="messages" autoUpdate="true">
+		<p:outputPanel id="messages">
+			<p:autoUpdate/>
 			<h:messages errorClass="error-message" infoClass="info-message" globalOnly="true"/>
 		</p:outputPanel>
 		<ui:insert name="content" />
