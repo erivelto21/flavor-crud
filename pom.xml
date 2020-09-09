@@ -9,7 +9,7 @@
 		<jsf.version>2.2.13</jsf.version>
 		<primefaces.version>6.2</primefaces.version>
 		<hibernate.entitymanager.version>5.2.12.Final</hibernate.entitymanager.version>
-		<hibernate.validator.version>5.4.1.Final</hibernate.validator.version>
+		<hibernate.validator.version>5.4.2.Final</hibernate.validator.version>
 		<postgresql.connector.version>42.2.9</postgresql.connector.version>
 		<weld.servlet.version>2.3.5.Final</weld.servlet.version>
 	</properties>
